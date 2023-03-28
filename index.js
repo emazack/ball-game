@@ -2,11 +2,13 @@ import theBall from "./data.js";
 import Ball from "./Ball.js";
 
 const myball = new Ball(theBall)
+const playground = document.getElementById("playground")
 
-console.log(myball.create());
 
 function render() {
-    document.getElementById("playground").appendChild(myball.create())
+    playground.appendChild(myball.create())
 }
 
 render()
+myball.create()
+console.log(myball.create());

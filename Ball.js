@@ -4,7 +4,13 @@ class Ball {
     }
 
     create () {
-        return document.createElement("div")
+        let { radius, color, htmlElement } = this
+        htmlElement = document.createElement("div")
+        htmlElement.style.backgroundColor = color;
+        htmlElement.style.width = `${radius}px`;
+        htmlElement.style.height = `${radius}px`;
+        htmlElement.classList.add('ball');
+        return htmlElement
     }
 }
 
