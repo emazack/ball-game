@@ -15,4 +15,5 @@
     position: absolute;
     background: red;
     border-radius: 50%;
+    cursor: pointer;
 }

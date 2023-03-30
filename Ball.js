@@ -9,8 +9,8 @@ class Ball {
         htmlElement.style.backgroundColor = color;
         htmlElement.style.width = `${radius}px`;
         htmlElement.style.height = `${radius}px`;
-        htmlElement.style.left = `${dx}%`;
-        htmlElement.style.top = `${dy}%`;
+        htmlElement.style.left = `${dx}px`;
+        htmlElement.style.top = `${dy}px`;
         htmlElement.classList.add('ball');
         this.click(htmlElement);
         this.draw(htmlElement);
@@ -28,31 +28,26 @@ class Ball {
     }
 
     draw(ball) {
-        let { dx, dy } = this
-        this.move(ball, dx, dy, parseInt(ball.style.left), parseInt(ball.style.top));
+        this.move(ball, parseInt(ball.style.left), parseInt(ball.style.top));
         this.changeDirection(ball, parseInt(ball.style.left), parseInt(ball.style.top));
         setTimeout(() => {
             this.draw(ball);
-        }, 100000 / 60);
+        }, 1000 / 60);
     }
 
-    move(ball, dx, dy, currentPostionLeft, currentPostionTop) {
-        ball.style.left = `${currentPostionLeft + (dx)}px`;
-        ball.style.top = `${currentPostionTop + (dy)}px`;
+    move(ball, currentPostionLeft, currentPostionTop) {
+        ball.style.left = `${currentPostionLeft + (this.dx)}px`;
+        ball.style.top = `${currentPostionTop + (this.dy)}px`;
     }
 
     changeDirection(ball, currentPostionLeft, currentPostionTop) {
         const playground = ball.parentElement
         if (playground) {
-            console.log(ball.style.dx);
-            console.log(ball.style.dy);
-            console.log("__________________________________");
-
             if (currentPostionLeft < 0 || currentPostionLeft > (playground.offsetWidth - this.radius)) {
-                parseInt(ball.style.left) = -(parseInt(ball.style.left));
+                this.dx = -this.dx;
             }
             if (currentPostionTop < 0 || currentPostionTop > (playground.offsetHeight - this.radius)) {
-                parseInt(ball.style.top) = -(parseInt(-ball.style.top));
+                this.dy = -this.dy
             }   
         }
     }
