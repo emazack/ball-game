@@ -1,8 +1,8 @@
 const theBall = {
-    radius: 4,
+    radius: 50,
     color: "red",
-    dx: 25,
-    dy: 25,
+    dx: 300,
+    dy: 300,
     htmlElement: null
 }
 

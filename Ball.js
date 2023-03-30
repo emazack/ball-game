@@ -3,14 +3,21 @@ class Ball {
         Object.assign(this, data)
     }
 
-    create () {
+    create() {
         let { radius, color, htmlElement } = this
         htmlElement = document.createElement("div")
         htmlElement.style.backgroundColor = color;
         htmlElement.style.width = `${radius}px`;
         htmlElement.style.height = `${radius}px`;
         htmlElement.classList.add('ball');
+        this.click(htmlElement);
         return htmlElement
+    }
+
+    click(ball) {
+        ball.addEventListener("click", () => {
+            console.log("cliccato");
+        })
     }
 }
 

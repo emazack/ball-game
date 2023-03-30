@@ -10,5 +10,3 @@ function render() {
 }
 
 render()
-myball.create()
-console.log(myball.create());
