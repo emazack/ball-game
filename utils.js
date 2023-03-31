@@ -9,8 +9,12 @@ function getRandomColors() {
 }
 
 function randomRadius() {
-    const radius = Math.floor(Math.random() * 100) + 25;
-    return radius;
+    return Math.floor(Math.random() * (100 - 25 + 1)) + 25;
 }
 
-export {getRandomColors, randomRadius}
+function getRandomDirection() {
+    return Math.floor(Math.random() * 7) + 1;
+  }
+  
+
+export {getRandomColors, randomRadius, getRandomDirection}

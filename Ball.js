@@ -1,12 +1,17 @@
+import { getRandomColors, randomRadius, getRandomDirection } from "./utils.js";
+
 class Ball {
     constructor(data) {
         Object.assign(this, data)
+        this.radius = randomRadius()
+        this.dx = getRandomDirection()
+        this.dy = getRandomDirection()
     }
 
     create() {
-        let { radius, color, htmlElement, dx, dy } = this
+        let { radius, htmlElement, dx, dy } = this
         htmlElement = document.createElement("div")
-        htmlElement.style.backgroundColor = color;
+        htmlElement.style.backgroundColor = getRandomColors();
         htmlElement.style.width = `${radius}px`;
         htmlElement.style.height = `${radius}px`;
         htmlElement.style.left = `${dx}px`;
