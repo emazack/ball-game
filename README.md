@@ -2,7 +2,7 @@
 This is a simple ball game built with HTML, CSS, and JavaScript.
 
 ## How to Play
-- Click anywhere on the screen to create a ball.
+- Click the button to create a ball.
 - Click on the ball to delete it.
 - Balls bounce off the edges of the screen and change direction.
 
